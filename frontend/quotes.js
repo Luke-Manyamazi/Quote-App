@@ -2,7 +2,8 @@ const quoteText = document.getElementById("quote");
 const quoteAuthor = document.getElementById("author");
 const newQuoteBtn = document.getElementById("new-quote");
 
-const backendURL = "https://luke-quote-app-backend.hosting.codeyourfuture.io/quote";
+// Updated to match your backend route
+const backendURL = "https://luke-quote-app-backend.hosting.codeyourfuture.io/api/quote";
 
 async function getQuote() {
   try {
