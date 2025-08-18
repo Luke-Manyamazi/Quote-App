@@ -4,7 +4,7 @@ const newQuoteBtn = document.getElementById("new-quote");
 
 async function getQuote() {
   try {
-    const response = await fetch("http://localhost:5000/api/quote");
+    const response = await fetch("https://luke-quote-app-backend.hosting.codeyourfuture.io");
     const data = await response.json();
     quoteText.textContent = `"${data.quote}"`;
     quoteAuthor.textContent = `~ ${data.author} ~`;
