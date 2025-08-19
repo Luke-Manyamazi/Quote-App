@@ -3,8 +3,9 @@ import cors from "cors";
 
 const app = express();
 app.use(cors());
+app.use(express.json()); // Middleware to parse JSON bodies
 
-// Example: hard-coded quotes (later move to DB if you want)
+// Quotes Array
 const quotes = [
   {
     quote: "Life isn't about getting and having, it's about giving and being.",
@@ -478,6 +479,21 @@ app.get("/api/quote", (req, res) => {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   res.json(quotes[randomIndex]);
 });
+
+// POST endpoint to add a quote
+app.post("/api/quote", (req, res) => {
+  const { quote, author } = req.body;
+
+  if (!quote || !author) {
+    return res.status(400).json({ error: "Both quote and author are required" });
+  }
+
+  const newQuote = { quote, author };
+  quotes.push(newQuote);
+
+  res.status(201).json({ message: "Quote added successfully!", newQuote });
+});
+
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
