@@ -23,7 +23,7 @@ async function getQuote() {
 
 newQuoteBtn.addEventListener("click", getQuote);
 
-/ ✅ Handle add-quote form submission
+// Handle add-quote form submission
 const addQuoteForm = document.getElementById("add-quote-form");
 const newQuoteInput = document.getElementById("new-quote-text");
 const newAuthorInput = document.getElementById("new-quote-author");
