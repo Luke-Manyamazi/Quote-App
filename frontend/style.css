@@ -1,19 +1,42 @@
-/** Write your CSS in here **/
+/* Mobile-first base styles */
 body {
-    margin-top: 300px;
+    margin: 50px 20px 0 20px; /* smaller top margin for mobiles */
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: linear-gradient(to right, rgb(151, 128, 229), rgb(236, 236, 94));
 }
 
+h1, h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+    color: black;
+    max-width: 90%;
+    margin: 10px auto;
+    word-wrap: break-word;
+}
+
+#author {
+    font-size: 0.9rem;
+    color: black;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+}
+
 button {
-    width: 150px;
-    height: 50px;
+    width: 80%;
+    max-width: 200px;
+    height: 45px;
     border: none;
     border-radius: 8px;
-    font-size: larger;
+    font-size: 1rem;
     background-color: lightgreen;
     color: black;
+    margin: 10px 0;
+    cursor: pointer;
 }
 
 button:hover {
@@ -22,30 +45,49 @@ button:hover {
 }
 
 hr {
-    width: 500px;
-}
-
-p {
-    font-size: 20px;
-    color: black;
-    width: 600px;
-    margin: 0 auto;
-}
-
-#author {
-    font-size: 18px;
-    color: black;
-    width: 600px;
-    margin: 0 auto;
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
 }
 
 input {
+    width: 90%;
+    max-width: 400px;
     height: 40px;
     border: 1px solid lightgray;
     border-radius: 8px;
     padding: 0 12px;
-    font-size: larger;
+    font-size: 1rem;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+    body {
+        margin-top: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    #author {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 150px;
+        height: 50px;
+        font-size: larger;
+    }
+
+    input {
+        width: 400px;
+        font-size: larger;
+    }
 }
