@@ -54,7 +54,7 @@ addQuoteForm.addEventListener("submit", async (e) => {
       throw new Error(data.error || "Failed to add quote");
     }
 
-    feedback.textContent = "✅ Quote added successfully!";
+    feedback.textContent = "Quote added successfully!";
     feedback.style.color = "green";
 
     // clear form
@@ -64,11 +64,10 @@ addQuoteForm.addEventListener("submit", async (e) => {
 
   } catch (err) {
     console.error("Error adding quote:", err);
-    feedback.textContent = "❌ Could not add the quote.";
+    feedback.textContent = "Could not add the quote.";
     feedback.style.color = "red";
   }
 });
-
 
 // Load first quote on page load
 getQuote();
