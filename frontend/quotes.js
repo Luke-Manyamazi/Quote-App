@@ -60,6 +60,8 @@ addQuoteForm.addEventListener("submit", async (e) => {
     // clear form
     newQuoteInput.value = "";
     newAuthorInput.value = "";
+    feedback.textContent = "";
+
   } catch (err) {
     console.error("Error adding quote:", err);
     feedback.textContent = "❌ Could not add the quote.";
